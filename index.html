@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 직무수행능력평가1 </title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* 배경 */
+        html {
+            width: 1920px;
+        }
+        body {
+            background-image: url(img/배경.png);
+            background-repeat: no-repeat;
+            background-position: center top;
+            color: #fff;
+            margin: 0;
+        }
+
+        /* 헤더와 푸터에 애니메이션을 주기 */
+        header {
+            height: 90px;
+            background: #000;
+            top: 0rem;
+            transition: height 0.5s ease;
+            text-align: center;
+            font-size: 30px;
+        }
+        footer {
+            display: flex;
+            justify-content: space-between;
+            height: 90px;
+            padding: 25px;
+            background: #000;
+            transition: height 0.5s ease;
+        }
+        footer ul{
+            list-style: none;
+            display: flex;
+            padding: 0px;
+        }
+        footer li{
+            padding: 0px 5px;
+        }
+        footer div:first-child li{
+            border-right: solid 1px #8ab3c5;
+        }
+        footer div:first-child li:last-child{
+            border: none;
+        }
+
+        /* 메인 페이지 */
+
+        main {
+            width: 1920px;
+            height: 750px;
+            transition: height 0.5s ease;
+        }
+
+        /* 랜딩 페이지 */
+        .landing {
+            align-items: center;
+            margin-top: 30px;
+        }
+        .magic-circle {
+            width: 700px;
+            height: 700px;
+            border-radius: 50%;
+            border: 2px solid #ffffff;
+            position: relative;
+            margin-left: 600px;
+        }
+
+        .magic-circle::before,
+        .magic-circle::after {
+            content: '';
+            position: absolute;
+            border: 2px solid #ffffff;
+        }
+
+        .magic-circle::before {
+            width: 80%;
+            height: 80%;
+            top: 10%;
+            left: 10%;
+            border-radius: 50%;
+            background: #ffffff;
+            clip-path: polygon(50% 0%, 60% 32%, 90% 21%, 70% 50%, 90% 78%, 60% 70%, 50% 100%, 39% 70%, 10% 80%, 30% 50%, 10% 21%, 39% 32%);
+        }
+
+        .magic-circle::after {
+            width: 90%;
+            height: 90%;
+            top: 4.5%;
+            left: 4.5%;
+            border-radius: 50%;
+        }
+
+        /* 메뉴 바 */
+        .menu {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 20px;
+            width: 50px;
+            height: 500px;
+            background: #000;
+            border-radius: 20px;
+        }
+
+        .menu ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu-item {
+            text-align: center;
+            color: #fff;
+            padding: 29.5px 0 ;
+            cursor: pointer;
+        }
+
+        .menu-item:hover {
+            color: #747474;
+        }
+
+        /* 모든 콘텐츠들은 숨긴채로 시작 */
+        .content {
+            display: none;
+        }
+
+        /* 클릭한 메뉴에 해당하는 콘텐츠를 보여주기 */
+        .content.active {
+            display: block;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        CHICHI
+    </header>
+
+    <main>
+
+        <!-- 메뉴 바 -->
+        <nav class="menu"> 
+            <ul>
+                <li class="menu-item active" data-target="home"> home </li>
+                <li class="menu-item" data-target="menu1"> menu1 </li>
+                <li class="menu-item" data-target="menu2"> menu2 </li>
+                <li class="menu-item" data-target="menu3"> menu3 </li>
+                <li class="menu-item" data-target="menu4"> menu4 </li>
+                <li class="menu-item" data-target="menu5"> menu5 </li>
+            </ul>
+        </nav>
+
+        <!-- 렌딩 페이지 -->
+        <div class="content landing active">
+            <div class="magic-circle"></div>
+        </div>
+
+        <!-- 홈, 메인 페이지 -->
+        <div class="content home">
+            <div id="content0">
+                <div id="text-box0">
+                    <div class="text_box0">
+                        <h2> 어서오세요. </h2>
+                        <h3> 치치의 세상에 잘 오셨습니다! </h3>
+    
+                        <div class="text0">
+                            <p>치치가 무엇인지 궁금하지 않으신가요?</p>
+                            <p>요정 치치가 당신을 기다리고 있습니다!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 첫번째 메뉴 내용 -->
+    <div class="content menu1">
+        <div class="imgalign1">
+            <div class="content_menu1">
+                <div class="imgbox1">
+                    <img class="img1" src="Img/0.png">
+                </div>
+                <div class="text_box1">
+                    <h2> CHICHI </h2>
+                    <h3> 나만의 수호 요정 치치 </h3>
+    
+                    <div class="text1">
+                        <p>치치는 사람들의 마음에서 태어난 염소인형의 요정입니다.</p>
+                        <p>사람의 마음에서 태어난 요정이기 때문에 말을 하지 않고 사람들도 자신의 수호 요정인 치치의 존재에 대해 잘 모르지만
+                            <br/>치치는 자신이 수호하는 사람을 응원하고 위로할 수 있는 힘이 있습니다.</p>
+                        <p>치치는 자신이 수호하는 사람의 마음에 따라 다양한 옷과 성격을 가지며
+                            <br/>그 가지는 상상도 할 수 없을 만큼 많습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+        <!-- 두번째 메뉴 내용 -->
+    <div class="content menu2">
+        <div id="content2">
+            <section class="content_card2">
+                <h1> FIND YOUR CHICHI </h1> 
+                <h4> on mouse click and found your chichi </h4>
+                <div class="content_textIn2">
+                    <div id="text-box2-1">
+                        <div class="content2-random2-1">
+                            <h3> 중세 장례식의 치치 </h3>
+                            <ul>
+                                <li> 어딘가 턱 막힌 기분인가요? </li>
+                                <li> 여유를 가지는 것만이 중요하지 않습니다. </li>
+                                <li> 심호흡을 해보세요. </li>
+                                <li> 검은 면사포 </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="text-box2-2">
+                        <div class="content2-random2-2">
+                            <div class="imgbox2">
+                                <img class="img2" src="Img/1.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="text-box2-1">
+                        <div class="content2-random2-3">
+                            <h3> 오늘의 운세 </h3>
+                            <ul>
+                                <li> 오늘 하루는 다운 된 기분입니다. </li>
+                                <li> 마음의 여유가 없는 것처럼 느껴지기도 하죠. </li>
+                                <li> 덕에 유연히 넘어가는 방법을 배우게 됩니다. </li>
+                                <li> 세수하기 </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <button id="toggleButton"> FOUND </button>
+        </div>
+    </div>
+
+        <!-- 세번째 메뉴 내용 -->
+        <div class="content menu3">
+            <div class="card3-container">
+                <div class="card3 horizontal_card3">
+                    <div class="card3_content">
+                        <div class="card3_front">
+                            <img class="img3" src="Img/뒷면.png">
+                        </div>
+                        <div class="card3_back">
+                            <img class="img3" src="Img/1.png">
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="card3 horizontal_card3">
+                    <div class="card3_content">
+                        <div class="card3_front">
+                            <img class="img3" src="Img/뒷면.png">
+                        </div>
+                        <div class="card3_back">
+                            <img class="img3" src="Img/2.png">
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="card3 horizontal_card3">
+                    <div class="card3_content">
+                        <div class="card3_front">
+                            <img class="img3" src="Img/뒷면.png">
+                        </div>
+                        <div class="card3_back">
+                            <img class="img3" src="Img/3.png">
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="card3 horizontal_card3">
+                    <div class="card3_content">
+                        <div class="card3_front">
+                            <img class="img3" src="Img/뒷면.png">
+                        </div>
+                        <div class="card3_back">
+                            <img class="img3" src="Img/4.png">
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="card3 horizontal_card3">
+                    <div class="card3_content">
+                        <div class="card3_front">
+                            <img class="img3" src="Img/뒷면.png">
+                        </div>
+                        <div class="card3_back">
+                            <img class="img3" src="Img/5.png">
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="card3 horizontal_card3">
+                    <div class="card3_content">
+                        <div class="card3_front">
+                            <img class="img3" src="Img/뒷면.png">
+                        </div>
+                        <div class="card3_back">
+                            <img class="img3" src="Img/6.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="card3-container">
+                <div class="card3 horizontal_card3">
+                    <div class="card3_content">
+                        <div class="card3_front">
+                            <img class="img3" src="Img/뒷면.png">
+                        </div>
+                        <div class="card3_back">
+                            <img class="img3" src="Img/7.png">
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="card3 horizontal_card3">
+                    <div class="card3_content">
+                        <div class="card3_front">
+                            <img class="img3" src="Img/뒷면.png">
+                        </div>
+                        <div class="card3_back">
+                            <img class="img3" src="Img/8.png">
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="card3 horizontal_card3">
+                    <div class="card3_content">
+                        <div class="card3_front">
+                            <img class="img3" src="Img/뒷면.png">
+                        </div>
+                        <div class="card3_back">
+                            <img class="img3" src="Img/9.png">
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="card3 horizontal_card3">
+                    <div class="card3_content">
+                        <div class="card3_front">
+                            <img class="img3" src="Img/뒷면.png">
+                        </div>
+                        <div class="card3_back">
+                            <img class="img3" src="Img/10.png">
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="card3 horizontal_card3">
+                    <div class="card3_content">
+                        <div class="card3_front">
+                            <img class="img3" src="Img/뒷면.png">
+                        </div>
+                        <div class="card3_back">
+                            <img class="img3" src="Img/11.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 네번째 메뉴 내용 -->
+    <div class="content menu4">
+        <div class="imgalign4">
+            <div class="content_menu4 active">
+                <div class="imgbox4">
+                    <img class="img4" src="Img/1.png">
+                </div>
+                <div class="text_box4">
+                    <h2> QUNORAL </h2>
+                    <h3> 중세 장례식 </h3>
+    
+                    <div class="text4">
+                        <p>중세 장례식의 치치는 정숙하고 조용한 성격을 가지고 있습니다.</p>
+                        <p>어둡고 무거운 마음을 가지고 있지만 그 속에는 사람을 생각하는 깊은 마음을 가지고 있기 때문에 
+                        <br/>사려깊고 사람의 마음을 헤아릴 수 있는 힘이 있습니다.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content_menu4">
+                <div class="imgbox4">
+                    <img class="img4" src="Img/2.png">
+                </div>
+                <div class="text_box4">
+                    <h2> HALLOWEEN </h2>
+                    <h3> 할로윈 </h3>
+    
+                    <div class="text4">
+                        <p>할로윈의 치치는 어둡고 장난스러운 성격을가지고 있습니다.</p>
+                        <p>장난기 많고 가끔은 누군가를 괴롭히기도 하지만 그 속에는 사람과 다 같이 즐거움을 누리고자 하며,
+                        <br/>자신을 기억해달라는 깊은 뜻의 마음을 가지고 있습니다.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content_menu4">
+                <div class="imgbox4">
+                    <img class="img4" src="Img/3.png">
+                </div>
+                <div class="text_box4">
+                    <h2> SPACE </h2>
+                    <h3> 우주 </h3>
+    
+                    <div class="text4">
+                        <p>우주의 치치는 어딘가 엉뚱하고 제멋대로인 성격을 가지고 있습니다.</p>
+                        <p>하지만 제멋대로인 만큼 다른 사람들의 마음에 공감을 잘 해주며 넓은 생각과 독특한 마음을 가지기도 합니다.</p>
+                        <p>마치 정말 우주가 된 것처럼 다양함에 대해 관대한 힘을 가진 치치입니다.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content_menu4">
+                <div class="imgbox4">
+                    <img class="img4" src="Img/4.png">
+                </div>
+                <div class="text_box4">
+                    <h2> NEW YEAR </h2>
+                    <h3> 한복 </h3>
+    
+                    <div class="text4">
+                        <p>한복의 치치는 정직하고 똑부러지는 성격을 가졌습니다.</p>
+                        <p>늘 단정한 모습을 하고 있으며 어떤 부분에서든지 튀고싶어 하지 않는 마음을 가지고 있습니다.</p>
+                        <p>그렇기 때문에 한복의 치치는 약간은 엄격하기도 하지만 그만큼 단단한 힘을 가지고 있습니다.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content_menu4">
+                <div class="imgbox4">
+                    <img class="img4" src="Img/5.png">
+                </div>
+                <div class="text_box4">
+                    <h2> PROM PARTY </h2>
+                    <h3> 프롬파티 </h3>
+    
+                    <div class="text4">
+                        <p>프롬파티의 치치는 가볍고 늘 들떠있는 성격입니다.</p>
+                        <p>재미를 추구하고 지루한 것은 딱 질색이지만 그만큼 주변을 띄우는 능력이 출중합니다.</p>
+                        <p>그렇기 때문에 늘 주위가 밝고 사람들 사이에서도 늘 빛이 나기 바쁩니다.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content_menu4">
+                <div class="imgbox4">
+                    <img class="img4" src="Img/6.png">
+                </div>
+                <div class="text_box4">
+                    <h2> PAJAMAS </h2>
+                    <h3> 파자마 </h3>
+    
+                    <div class="text4">
+                        <p>파자마의 치치는 게으르고 느긋한 성격입니다.</p>
+                        <p>게으르긴 하지만 그만큼 마음의 여유가 큰 치치이기 떄문에</p>
+                        <br/>남을 위로할때 상대에게 안정감을 가장 크게 주는 힘이 있습니다.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content_menu4">
+                <div class="imgbox4">
+                    <img class="img4" src="Img/7.png">
+                </div>
+                <div class="text_box4">
+                    <h2> POOL </h2>
+                    <h3> 수영복 </h3>
+    
+                    <div class="text4">
+                        <p>수영복의 치치는 센스있고 성실한 성격입니다.</p>
+                        <p>늘 옆에 끼고 다니는 튜브처럼 수영에 없어서는 안되는 중요한 역할을 맞는 것을 좋아하며
+                        <br/>또 그런 역할을 하는 것에 대해 강한 힘을 가지고 있습니다.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content_menu4">
+                <div class="imgbox4">
+                    <img class="img4" src="Img/8.png">
+                </div>
+                <div class="text_box4">
+                    <h2> CIRCUS </h2>
+                    <h3> 서커스 </h3>
+    
+                    <div class="text4">
+                        <p>서커스의 치치는 장난기있고 엉뚱한 성격입니다.</p>
+                        <p>장난기도 많고 엉뚱하기 때문에 종종 누군가에게 혼나기도 하지만 그런건 중요하지 않습니다.</p>
+                        <p>서커스의 치치는 그것보다 상대의 웃음을 보는 것이 중요하기 때문입니다.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content_menu4">
+                <div class="imgbox4">
+                    <img class="img4" src="Img/9.png">
+                </div>
+                <div class="text_box4">
+                    <h2> christmas </h2>
+                    <h3> 크리스마스 </h3>
+    
+                    <div class="text4">
+                        <p>크리스마스의 치치는 친절하고 남을 챙기는 성격입니다.</p>
+                        <p>자신보다 다른 이들을 더 챙기고 헤아리며 또 늘 걱정하기도 하다 정작 중요한 것을 놓치기도 합니다.</p>
+                        <p>하지만 그만큼 마음이 여리고 모두를 보듬을 수 있는 힘이 있습니다.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content_menu4">
+                <div class="imgbox4">
+                    <img class="img4" src="Img/10.png">
+                </div>
+                <div class="text_box4">
+                    <h2> school </h2>
+                    <h3> 학교 </h3>
+    
+                    <div class="text4">
+                        <p>학교의 치치는 유쾌하고 센스있는 성격입니다.</p>
+                        <p>밝고 재치있기 때문에 늘 누군가에게 둘러쌓여있지만 학교의 치치의 관심사는 오롯이 친구의 관심입니다.</p>
+                        <p>그렇기 때문에 모든 면에서의 센스가 가장 뛰어나다는 특징이 있습니다.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content_menu4">
+                <div class="imgbox4">
+                    <img class="img4" src="Img/11.png">
+                </div>
+                <div class="text_box4">
+                    <h2> MASQUERADE </h2>
+                    <h3> 가면무도회 </h3>
+    
+                    <div class="text4">
+                        <p>가면무도회의 치치는 그 누구도 쉽게 가질 수 없는 힘이 있습니다.</p>
+                        <p>늘 비밀스럽고 신비로운 행동을 하며 누구든 가면무도회의 치치의 모습을 보면 빠져나올 수 없습니다.</p>
+                        <p>이런 모습은 사람의 가장 열정적인 부분을 닮아 생긴 성격일겁니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="BTN4">
+            <button class="prev"> ◁ </button>
+            <button class="next"> ▷ </button>
+        </div>
+        
+    </div>
+        
+        <!-- 다섯번째 메뉴 내용 -->
+    <div class="content menu5">
+        <div class="imgalign5">
+            <div class="content_menu5">
+                <div class="imgbox5">
+                    <img class="img5" src="Img/치치1.png">
+                </div>
+                <div class="imgbox5">
+                    <img class="img5" src="Img/치치2.png">
+                </div>
+                <div class="imgbox5">
+                    <img class="img5" src="Img/치치3.png">
+                </div>
+                <div class="imgbox5">
+                    <img class="img5" src="Img/치치4.png">
+                </div>
+                <div class="text_box5">
+                    <h2> CHICHI PROUCTION RECORD </h2>
+                    <h3> 나만의 수호 요정 치치 </h3>
+    
+                    <div class="text5">
+                        <p> 한번쯤 사람들 각자가 가진 마음의 크기, 성격에 따라 자신만의 수호천사를 가지고 있지 않을까? 에 대한 의문을 가졌다. </p>
+                        <p> 사람의 심리에 빠져드는 것은 늘 재미있는 일이고 이에 대해 몇날 며칠 같은 주제의 심리적 토론에 빠진 적이 있었다.
+                            <br/>치치의 프로젝트는 그런 열중하는 나의 모습에서 시작 된 프로젝트라고 할 수 있을 것이다.</p>
+                        <p> 치치가 인형이 된 이유는 사람들은 어릴적부터 엄마 그 다음으로는 인형을 손에 쥐고 자라기 때문이다.
+                            <br/>인형은 그 형태가 어떻든 사람들의 기억 한편에 자리잡아 그들의 안정이 되어주기도 하고 응원, 기쁨, 위로의 감정을 전달해주기도 한다.</p>
+                            <p> 말도 하지 못하는 단순한 인형이 그런 효과를 낼 수 있다는 것은 연구해볼만한 일이다. 치치도 그렇다.
+                                <br/> 인형의 가장 기본적인 형태라 볼 수 있는 봉제인형의 모습을 한 치치는 말을 하지 않지만 인간의 곁에 머무는 것 만으로도 인간에게 다양한 감정을 전달한다.
+                                <br/> 치치는 그런 애착 인형에서 늘어난 새로운 형태의 인형 상담사가 되어줄 수 있다. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </main>
+
+    <footer>
+        <div>
+            <ul>
+                <li>home</li>
+                <li>about</li>
+                <li>services</li>
+                <li>work</li>
+            </ul>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+    
+</body>
+
+</html>
